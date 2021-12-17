@@ -25,7 +25,7 @@
     <style type="text/css">
       .card{
         color: black;
-        background-color: #e4d2cf;
+        background-color: #ddd8eb; <!-- #ede4e4 nice color violet-grey-->
       }
       .p1 {
         font-family: Pangram, Garamond, Georgia, "Times New Roman";
@@ -58,7 +58,18 @@
         margin: 0 auto;
         width: 60%;
       }
-
+      <!-- sub, sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sup {
+        top: -0.5em;
+      }
+      sub {
+        bottom: -0.25em;
+      }-->
     </style>
   </head>
   <body>
@@ -188,7 +199,9 @@
                  <p style="margin-bottom:0.2cm;">Arxiv preprint, October 2020</p>
                  <div class="collapse" id="some-classical">
                      <div class="card card-body">
-                         We consider classes of arbitrary (finite or infinite) graphs of bounded shrub-depth, specifically the class TM<sub>r</sub>(d) of p-labeled arbitrary graphs whose underlying unlabeled graphs have tree models of height d and r labels. We show that this class satisfies an extension of the classical Löwenheim-Skolem property into the finite and for MSO. This extension being a generalization of the small model property, we obtain that the graphs of TM<sub>r,p</sub>(d) are pseudo-finite. In addition, we obtain as consequences entirely new proofs of a number of known results concerning bounded shrub-depth classes (of finite graphs) and TM<sub>r,p</sub>(d). These include the small model property for MSO with elementary bounds, the classical compactness theorem from model theory over TM<sub>r,p</sub>(d), and the equivalence of MSO and FO over TM<sub>r,p</sub>(d) and hence over bounded shrub-depth classes. The proof for the last of these is via an adaptation of the proof of the classical Lindström's theorem characterizing FO over arbitrary structures.
+                         <div class="card-text">
+                         We consider classes of arbitrary (finite or infinite) graphs of bounded shrub-depth, specifically the class TM<sub>r, p</sub>(d) of p-labeled arbitrary graphs whose underlying unlabeled graphs have tree models of height d and r labels. We show that this class satisfies an extension of the classical Löwenheim-Skolem property into the finite and for MSO. This extension being a generalization of the small model property, we obtain that the graphs of TM<sub>r, p</sub>(d) are pseudo-finite. In addition, we obtain as consequences entirely new proofs of a number of known results concerning bounded shrub-depth classes (of finite graphs) and TM<sub>r, p</sub>(d). These include the small model property for MSO with elementary bounds, the classical compactness theorem from model theory over TM<sub>r, p</sub>(d), and the equivalence of MSO and FO over TM<sub>r, p</sub>(d) and hence over bounded shrub-depth classes. The proof for the last of these is via an adaptation of the proof of the classical Lindström's theorem characterizing FO over arbitrary structures.
+                             </div>
                      </div>
                  </div>
              </li>
@@ -202,7 +215,7 @@
                  <a href=https://www.fi.muni.cz/~hlineny/>Petr Hliněný</a>, and
                  <a href=https://www.researchgate.net/scientific-contributions/Filip-Pokryvka-2132774538>
                      Filip Pokrývka</a>)
-                 &nbsp[<a data-bs-toggle="collapse" href="#cwpoints" aria-expanded="false" aria-controls="collapseExample">abstract</a>]
+                 &nbsp[<a data-bs-toggle="collapse" href="#cwpointswg" aria-expanded="false" aria-controls="collapseExample">abstract</a>]
                  [<a href="https://link.springer.com/chapter/10.1007%2F978-3-030-60440-0_5">paper</a>]
                  [<a href="Papers/cwpoints-wg.pdf">pdf</a>] <br>
                  <p style="margin-bottom:0.2cm;">Proc. of the 46<sup>th</sup> International Workshop on Graph Theoretic Concepts in Computer Science, Leeds, UK,  June 2020, pp. 54-66, Springer</p>
@@ -244,7 +257,12 @@
                  <p style="margin-bottom:0.2cm;">Proc. of the 8<sup>th</sup> Indian Conference on Logic and its Applications (ICLA), Delhi, India, March 2019, pp. 76-88, Springer</p>
                <div class="collapse" id="revisiting-glt">
                   <div class="card card-body">
-                     We present a new proof of the generalized Łoś-Tarski theorem (GLT(k)) from [6], over arbitrary structures. Instead of using λ-saturation as in [6], we construct just the "required saturation" directly using ascending chains of structures. We also strengthen the failure of GLT(k) in the finite shown in [7], by strengthening the failure of the Łoś-Tarski theorem in this context. In particular, we prove that not just universal sentences, but for each fixed k, even Σ^0_2 sentences containing k existential quantifiers fail to capture hereditariness in the finite. We conclude with two problems as future directions, concerning the Łoś-Tarski theorem and GLT(k), both in the context of all finite structures.
+                      <div class="card-text">
+                     We present a new proof of the generalized Łoś-Tarski theorem (GLT(k)) from [1], over arbitrary structures. Instead of using λ-saturation as in [1], we construct just the "required saturation" directly using ascending chains of structures. We also strengthen the failure of GLT(k) in the finite shown in [2], by strengthening the failure of the Łoś-Tarski theorem in this context. In particular, we prove that not just universal sentences, but for each fixed k, even Σ<sup>0</sup><sub>2</sub> sentences containing k existential quantifiers fail to capture hereditariness in the finite. We conclude with two problems as future directions, concerning the Łoś-Tarski theorem and GLT(k), both in the context of all finite structures.<br/><br />
+
+                      [1] Sankaran, A., Adsul, B., Chakraborty, S.: A generalization of the Łoś-Tarski preservation theorem. Annals of Pure and Applied Logic, 167(3), 189-210 (2016)<br />
+                      [2] Sankaran, A., Adsul, B., Madan, V., Kamath, P., Chakraborty, S.: Preservation under  substructures  modulo  bounded  cores. Proceedings of  WoLLIC 2012, Buenos Aires,  Argentina, 3-6 September, 2012, pp. 291–305 (2012)
+                          </div>
                   </div>
                </div>
                 <!-- <div class="collapse" id="revisiting-glt-talk">
@@ -272,7 +290,11 @@
                  <p style="margin-bottom:0.2cm;">Proc. of the 26<sup>th</sup> Computer Science Logic (CSL), Stockholm, Sweden, August 2017, pp. 37:1-37:21, Schloss Dagstuhl - LZI</p>
                  <div class="collapse" id="fin-dls">
                      <div class="card card-body">
-                         We present a model-theoretic property of finite structures, that can be seen to be a finitary analogue of the well-studied downward Löwenheim-Skolem property from classical model theory. We call this property the *L-equivalent bounded substructure property*, denoted L-EBSP, where L is either FO or MSO. Intuitively, L-EBSP states that a large finite structure contains a small "logically similar" substructure, where logical similarity means indistinguishability with respect to sentences of L having a given quantifier nesting depth. It turns out that this simply stated property is enjoyed by a variety of classes of interest in computer science: examples include regular languages of words, trees (unordered, ordered or ranked) and nested words, and various classes of graphs, such as cographs, graph classes of bounded tree-depth, those of bounded shrub-depth and n-partite cographs. Further, L-EBSP remains preserved in the classes generated from the above by operations that are implementable using quantifier-free translation schemes. All of the aforementioned classes admit natural tree representations for their structures. We use this fact to show that the small and logically similar substructure of a large structure in any of these classes, can be computed in time linear in the size of the tree representation of the structure, giving linear time fixed parameter tractable (f.p.t.) algorithms for checking L-definable properties of the large structure. We conclude by presenting a strengthening of L-EBSP, that asserts "logical self-similarity at all scales" for a suitable notion of scale. We call this the *logical fractal* property and show that most of the classes mentioned above are indeed, logical fractals.
+                         <div class="card-text">
+                         We present a model-theoretic property of finite structures, that can be seen to be a finitary analogue of the well-studied downward Löwenheim-Skolem property from classical model theory. We call this property the <b>L-equivalent bounded substructure property</b>, denoted L-EBSP, where L is either FO or MSO. Intuitively, L-EBSP states that a large finite structure contains a small "logically similar" substructure, where logical similarity means indistinguishability with respect to sentences of L having a given quantifier nesting depth. It turns out that this simply stated property is enjoyed by a variety of classes of interest in computer science: examples include regular languages of words, trees (unordered, ordered or ranked) and nested words, and various classes of graphs, such as cographs, graph classes of bounded tree-depth, those of bounded shrub-depth and n-partite cographs. <br />
+
+                             Further, L-EBSP remains preserved in the classes generated from the above by operations that are implementable using quantifier-free translation schemes. All of the aforementioned classes admit natural tree representations for their structures. We use this fact to show that the small and logically similar substructure of a large structure in any of these classes, can be computed in time linear in the size of the tree representation of the structure, giving linear time fixed parameter tractable (f.p.t.) algorithms for checking L-definable properties of the large structure. We conclude by presenting a strengthening of L-EBSP, that asserts "logical self-similarity at all scales" for a suitable notion of scale. We call this the <b>logical fractal</b> property and show that most of the classes mentioned above are indeed, logical fractals.
+                             </div>
                     </div>
                  </div>
                  <div class="collapse" id="fin-dls-talk">
@@ -323,7 +345,9 @@ Logic (CSL) 2017, Stockholm, Sweden
                <p style="margin-bottom:0.2cm;">Annals of Pure and Applied Logic, Vol. 167(3), 189-210, 2016</p>
                <div class="collapse" id="a-generalization">
                   <div class="card card-body">
-                      We present new parameterized preservation properties that provide for each natural number k, semantic characterizations of the ∃<sup>k</sup>∀<sup>⁎</sup> and ∀<sup>k</sup>∃<sup>⁎</sup> prefix classes of first order logic sentences, over the class of all structures and for arbitrary finite vocabularies. These properties, that we call preservation under substructures modulo k-cruxes and preservation under k-ary covered extensions respectively, correspond exactly to the classical properties of preservation under substructures and preservation under extensions, when k equals 0. As a consequence, we get a parameterized generalization of the Łoś–Tarski preservation theorem for sentences, in both its substructural and extensional forms. We call our characterizations collectively the generalized Łoś–Tarski theorem for sentences. We generalize this theorem to theories, by showing that theories that are preserved under k-ary covered extensions are characterized by theories of ∀<sup>k</sup>∃<sup>⁎</sup> sentences, and theories that are preserved under substructures modulo k-cruxes, are equivalent, under a well-motivated model-theoretic hypothesis, to theories of ∃<sup>k</sup>∀<sup>⁎</sup> sentences. In contrast to existing preservation properties in the literature that characterize the Σ<sup>0</sup><sub>2</sub> and Π<sup>0</sup><sub>2</sub> prefix classes of FO sentences, our preservation properties are combinatorial and finitary in nature, and stay non-trivial over finite structures as well.
+                      <div class="card-text">
+                          We present new parameterized preservation properties that provide for each natural number k, semantic characterizations of the  ∃<sup>k</sup>∀<sup>*</sup> and ∀<sup>k</sup>∃<sup>*</sup> prefix classes of first order logic sentences, over the class of all structures and for arbitrary finite vocabularies. These properties, that we call <b>preservation under substructures modulo k-cruxes</b> and <b>preservation under k-ary covered extensions</b> respectively, correspond exactly to the classical properties of preservation under substructures and preservation under extensions, when k equals 0. As a consequence, we get a parameterized generalization of the Łoś–Tarski preservation theorem for sentences, in both its substructural and extensional forms. We call our characterizations collectively the <b>generalized Łoś–Tarski theorem</b> for sentences. We generalize this theorem to theories, by showing that theories that are preserved under k-ary covered extensions are characterized by theories of ∀<sup>k</sup>∃<sup>*</sup> sentences, and theories that are preserved under substructures modulo k-cruxes, are equivalent, under a well-motivated model-theoretic hypothesis, to theories of  ∃<sup>k</sup>∀<sup>*</sup> sentences. In contrast to existing preservation properties in the literature that characterize the Σ<sup>0</sup><sub>2</sub> and Π<sup>0</sup><sub>2</sub> prefix classes of FO sentences, our preservation properties are combinatorial and finitary in nature, and stay non-trivial over finite structures as well.
+                          </div>
                   </div>
                </div>
             </li>
@@ -384,7 +408,9 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
                 <p style="margin-bottom:0.2cm;">Proc. of the 19<sup>th</sup> Workshop on Logic, Language, Information and Computation (WoLLIC), Buenos Aires, Argentina, September 2012, Vol. 7456, pp. 291-305, Springer</p>
                 <div class="collapse" id="preservation-under">
                   <div class = "card card-body">
-                     We investigate a model-theoretic property that generalizes the classical notion of preservation under substructures. We call this property preservation under substructures modulo bounded cores, and present a syntactic characterization via Σ^0_2 sentences for properties of arbitrary structures definable by FO sentences. Towards a sharper characterization, we conjecture that the count of existential quantifiers in the Σ^0_2 sentence equals the size of the smallest bounded core. We show that this conjecture holds for special fragments of FO and also over special classes of structures. We present a (not FO-definable) class of finite structures for which the conjecture fails, but for which the classical Łoś-Tarski preservation theorem holds. As a fallout of our studies, we obtain combinatorial proofs of the Łoś-Tarski theorem for some of the aforementioned cases.
+                      <div class="card-text">
+                     We investigate a model-theoretic property that generalizes the classical notion of preservation under substructures. We call this property preservation under substructures modulo bounded cores, and present a syntactic characterization via Σ<sup>0</sup><sub>2</sub> sentences for properties of arbitrary structures definable by FO sentences. Towards a sharper characterization, we conjecture that the count of existential quantifiers in the and Σ<sup>0</sup><sub>2</sub> sentence equals the size of the smallest bounded core. We show that this conjecture holds for special fragments of FO and also over special classes of structures. We present a (not FO-definable) class of finite structures for which the conjecture fails, but for which the classical Łoś-Tarski preservation theorem holds. As a fallout of our studies, we obtain combinatorial proofs of the Łoś-Tarski theorem for some of the aforementioned cases.
+                          </div>
                   </div>
                </div>
                <div class="collapse" id="preservation-under-talks">
@@ -507,7 +533,7 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
                 <div class="collapse" id="heredit-fin">
                     <div class="card card-body">
                         The Los-Tarski theorem is a result from classical model theory that states that over arbitrary (finite or infinite) structures, a first order (FO) sentence is hereditary if, and only if, it is equivalent to a universal sentence. This theorem however fails when restricted to finite structures. Tait (1959) and independently Gurevich and Shelah (1984) showed that in the finite (i.e. over the class of all finite structures), there is an FO sentence that is hereditary but that is not equivalent to any universal sentence.<br><br>
-                        In a recent paper [2], a strengthening of the above failure was shown: in the finite, for every k, there is a hereditary FO sentence that is not equivalent to any \Sigma^0_2 sentence that contains k existential quantifiers. We generalize this result by showing in the finite, that for every n, there is a hereditary FO sentence \varphi_n that is not equivalent to any \Sigma^0_n sentence. In short, (FO-)hereditariness over all finite structures is not capturable by any prefix class of FO. We show further that \neg \varphi_n is expressible in Datalog(\neq, \neg), thus answering in the negative an open question posed by Rosen and Weinstein [1], that asks whether FO \cap Datalog(\neq, \neg) is contained (semantically) inside some prefix class of FO. The methods used to show our result extend the ideas from [2] in a significant way, and involve the construction of structures that exhibit self-similarity.<br>
+                        In a recent paper [2], a strengthening of the above failure was shown: in the finite, for every k, there is a hereditary FO sentence that is not equivalent to any Σ<sup>0</sup><sub>2</sub> sentence that contains k existential quantifiers. We generalize this result by showing in the finite, that for every n, there is a hereditary FO sentence φ<sub>n</sub> that is not equivalent to any Σ<sup>0</sup><sub>n</sub> sentence. In short, (FO-)hereditariness over all finite structures is not capturable by any prefix class of FO. We show further that ¬φ<sub>n</sub> is expressible in Datalog(≠, ¬), thus answering in the negative an open question posed by Rosen and Weinstein [1], that asks whether FO ∩ Datalog(≠, ¬) is contained (semantically) inside some prefix class of FO. The methods used to show our result extend the ideas from [2] in a significant way, and involve the construction of structures that exhibit self-similarity.<br>
 
                         This is joint work with Anuj Dawar. <br>
 

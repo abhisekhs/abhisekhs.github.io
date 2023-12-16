@@ -560,12 +560,11 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
             <li>
                 <b>Program verification using small models</b>
                 <a data-bs-toggle="collapse" href="#rhpl" aria-expanded="false" aria-controls="collapseExample">[abstract]</a>
-                <a href="Talks/rhpl-submission.pdf">[report draft]</a>
+                <a href="Papers/small-models-report.pdf">[report draft]</a>
                 <br />
                 <p style="margin-bottom:0.2cm;">Accepted short talk (upcoming) at the <a href="https://www.cl.cam.ac.uk/events/owls/">Workshop on Research Highlights in Programming Languages (RHPL) 2023</a>, December, 2023</p>
                 <div class="collapse" id="rhpl">
                     <div class="card card-body">
-
                     We explore the use of methods from model theory in the verification of array programs. Given a program P and an assertion A to check of P, we formulate these respectively as sentences φ<sub>P</sub> and φ<sub>A</sub> of multi-sorted first order logic. The sentence φ<sub>P</sub> is such that modulo a small set φ<sub>{ax}</sub> of axioms, the models of φ<sub>P</sub> are in 1-1 correspondence with  (suitably abstract representations of) the executions of P on arbitrary input arrays. Likewise, the models of φ<sub>A</sub> restricted to the class of models of φ<sub>P</sub> \wedge φ<sub>ax</sub>, correspond to (suitably abstracted) executions of P that satisfy the assertion A.
 
                     Our approach to verifying the program P against the assertion A consists of showing that the sentence α<sub>P, A</sub> := φ<sub>ax</sub> ∧ φ<sub>P</sub> ∧ ¬φ<sub>A</sub> has the <it>small model property</it>. That is, if α<sub>P, A</sub> has a model of some finite size, then there is also such a model in which the domains interpreting the sorts have all sizes bounded by a small function of P and A. The desired verification reduces to searching for models of α<sub>P, A</sub> of sizes within the mentioned bound. We examine specific classes of programs and assertions, and establish the small model property for α<sub>P, A</sub> by showing that models of α<sub>P, A</sub> that are large admit local reductions that are effected by "removal of iterations" in the executions of P that they correspond to.

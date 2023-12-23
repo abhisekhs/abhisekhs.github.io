@@ -24,8 +24,15 @@
     <title>Abhisekh Sankaran</title>
     <style type="text/css">
       .card{
-        color: black;
-        background-color: #513d8a; <!--  #ddd8eb, #ede4e4 nice color violet-grey-->
+        color: white;
+        background-color: #006666;
+        <!-- #006666; -- darker indigo
+        #009999; -- less dark indigo
+        #669999; -- bluish gray
+        #00cc99; -- indigo
+        #513d8a; -- violet
+        #ddd8eb; -- light gray
+        #ede4e4; -- pinkish gray -->
       }
       .p1 {
         font-family: Pangram, Garamond, Georgia, "Times New Roman";
@@ -58,7 +65,7 @@
         margin: 0 auto;
         width: 60%;
       }
-      <!-- sub, sup {
+      sub, sup {
         font-size: 75%;
         line-height: 0;
         position: relative;
@@ -69,7 +76,7 @@
       }
       sub {
         bottom: -0.25em;
-      }-->
+      }
     </style>
   </head>
   <body>
@@ -106,7 +113,7 @@
           <h3> About me </h3>
               <p>
                   I am a Consultant at Tata Research Development and Design Centre (TRDDC), the branch of TCS Research in Pune. Prior to joining TRDDC, I was a post-doctoral research associate at the Department of Computer Science and Technology at the University of Cambridge, working with <a href="https://www.cl.cam.ac.uk/~ad260/"> Anuj Dawar</a> in the project "Logical Fractals" funded by the <a href=>Leverhulme Trust</a>.
-                  Before coming to Cambridge, I was a post-doctoral fellow in the <a href="https://www.imsc.res.in/theoretical_computer_science">Theoretical Computer Science Wing</a> at the <a href="https://www.imsc.res.in/">Institute of Mathematical Sciences, Chennai</a>.
+                  Before going to Cambridge, I was a post-doctoral fellow in the <a href="https://www.imsc.res.in/theoretical_computer_science">Theoretical Computer Science Wing</a> at the <a href="https://www.imsc.res.in/">Institute of Mathematical Sciences, Chennai working with <a href-"https://azimpremjiuniversity.edu.in/people/ramanujam-r">R. Ramanujam</a>.
                   I completed my Ph.D., and also my Bachelors and Masters, from the <a href="https://www.cse.iitb.ac.in">Department of Computer Science and Engineering</a> at <a href="https://www.iitb.ac.in">IIT Bombay</a>. My dissertation, titled "<a href="https://arxiv.org/abs/1609.06297">A generalization of the Łoś-Tarski preservation theorem</a>", was completed under the guidance of <a href=https://www.researchgate.net/profile/Bharat_Adsul>Bharat Adsul</a> and <a href=https://www.cse.iitb.ac.in/~supratik/>Supratik Chakraborty</a>. A summary of my dissertation can be found <a href="https://arxiv.org/abs/1811.01014">here</a>.
               </p>
           </div></div>
@@ -566,10 +573,11 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
                 <p style="margin-bottom:0.2cm;">Accepted short talk at the <a href="https://www.cl.cam.ac.uk/events/owls/">Workshop on Research Highlights in Programming Languages (RHPL) 2023</a>, December, 2023</p>
                 <div class="collapse" id="rhpl">
                     <div class="card card-body">
-                    We explore the use of methods from model theory in the verification of array programs. Given a program P and an assertion A to check of P, we formulate these respectively as sentences φ<sub>P</sub> and φ<sub>A</sub> of multi-sorted first order logic. The sentence φ<sub>P</sub> is such that modulo a small set φ<sub>{ax}</sub> of axioms, the models of φ<sub>P</sub> are in 1-1 correspondence with  (suitably abstract representations of) the executions of P on arbitrary input arrays. Likewise, the models of φ<sub>A</sub> restricted to the class of models of φ<sub>P</sub> \wedge φ<sub>ax</sub>, correspond to (suitably abstracted) executions of P that satisfy the assertion A.
-
-                    Our approach to verifying the program P against the assertion A consists of showing that the sentence α<sub>P, A</sub> := φ<sub>ax</sub> ∧ φ<sub>P</sub> ∧ ¬φ<sub>A</sub> has the <it>small model property</it>. That is, if α<sub>P, A</sub> has a model of some finite size, then there is also such a model in which the domains interpreting the sorts have all sizes bounded by a small function of P and A. The desired verification reduces to searching for models of α<sub>P, A</sub> of sizes within the mentioned bound. We examine specific classes of programs and assertions, and establish the small model property for α<sub>P, A</sub> by showing that models of α<sub>P, A</sub> that are large admit local reductions that are effected by "removal of iterations" in the executions of P that they correspond to.
-
+                        <div class="card-text">
+                            We explore the use of methods from model theory in the verification of array programs. Given a program P and an assertion A to check of P, we formulate these respectively as sentences φ<sub>P</sub> and φ<sub>A</sub> of multi-sorted first order logic. The sentence φ<sub>P</sub> is such that modulo a small set φ<sub>{ax}</sub> of axioms, the models of φ<sub>P</sub> are in 1-1 correspondence with  (suitably abstract representations of) the executions of P on arbitrary input arrays. Likewise, the models of φ<sub>A</sub> restricted to the class of models of φ<sub>P</sub> \wedge φ<sub>ax</sub>, correspond to (suitably abstracted) executions of P that satisfy the assertion A.
+                            <br /> <br />
+                            Our approach to verifying the program P against the assertion A consists of showing that the sentence α<sub>P, A</sub> := φ<sub>ax</sub> ∧ φ<sub>P</sub> ∧ ¬φ<sub>A</sub> has the <it>small model property</it>. That is, if α<sub>P, A</sub> has a model of some finite size, then there is also such a model in which the domains interpreting the sorts have all sizes bounded by a small function of P and A. The desired verification reduces to searching for models of α<sub>P, A</sub> of sizes within the mentioned bound. We examine specific classes of programs and assertions, and establish the small model property for α<sub>P, A</sub> by showing that models of α<sub>P, A</sub> that are large admit local reductions that are effected by "removal of iterations" in the executions of P that they correspond to.
+                        </div>
                     </div>
                 </div>
             </li>
@@ -584,7 +592,9 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
                 <p style="margin-bottom:0.2cm;"><b>Invited talk</b> at the <a href="https://www.cl.cam.ac.uk/events/owls/">Young Researchers - Online Worldwide Logic Seminar (YR-OWLS)</a>, November, 2020</p>
                 <div class="collapse" id="yr-owls">
                     <div class="card card-body">
+                        <div class="card-text">
                         It is well known that the classic Łoś-Tarski preservation theorem fails in the finite: there are first-order definable classes of finite structures closed under extensions which are not definable (in the finite) in the existential fragment of first-order logic. We strengthen this by constructing for every n, first-order definable classes of finite structures closed under extensions which are not definable with n quantifier alternations. The classes we construct are definable in the extension of Datalog with negation and indeed in the existential fragment of transitive-closure logic. This answers negatively an open question posed by Rosen and Weinstein.
+                        </div>
                     </div>
                 </div>
             </li>

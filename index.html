@@ -539,8 +539,8 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
          <p>
            <ul>
            <li><p style="margin-bottom:0.2cm;"> <b> Conference reviewing: </b> <a href="https://www.fsttcs.org.in/">FSTTCS</a> (2023, 2011, 2008), <a href="https://lics.siglog.org/">LICS</a> (2022), <a href="https://etaps.org/about/fossacs/">FoSSaCS</a> (2020), <a href="https://dl.acm.org/conference/soda">SODA</a> (2020), <a href="https://www.isichennai.res.in/~sujata/icla2021/">ICLA</a> (2019, 2015), <a href="https://www.eacsl.org/csl-conferences/">CSL-LICS</a> (2014), <a href="https://www.isp.uni-luebeck.de/time11/">TIME</a> (2011), <a href="https://ictac.isp.uni-luebeck.de/about">ICTAC</a> (2010)</p></li>
-		   <li><p style="margin-bottom:0.2cm;"> <b> Journal reviewing: </b> JSL (2023), SIDMA (2022), JCT-B (2021), NDJFL (2021), and LMCS (2017, 2015)</p></li>
-		   <li><p style="margin-bottom:0.2cm;"> <b> Program Committee member: </b> FSTTCS 2023, RHPL 2023, ICLA 2019</p></li>
+           <li><p style="margin-bottom:0.2cm;"> <b> Journal reviewing: </b> <a href="https://lmcs.episciences.org/">LMCS</a> (2024, 2017, 2015), <a href="https://www.cambridge.org/core/journals/journal-of-symbolic-logic">JSL</a> (2023), <a href="https://ndjfl.nd.edu/">NDJFL</a> (2023), <a href="">SIDMA</a> (2022), <a href="https://www.sciencedirect.com/journal/journal-of-combinatorial-theory-series-b">JCT-B</a> (2021) </p></li>
+		   <li><p style="margin-bottom:0.2cm;"> <b> Program Committee member: </b> <a href="https://www.fsttcs.org.in/">FSTTCS</a> 2023, <a href="https://fmindia.cmi.ac.in/rhpl/">RHPL</a> 2023, <a href="https://easychair.org/cfp/icla2019">ICLA 2019</a></p></li>
 	   </ul>
 	</div>
           <hr />
@@ -577,6 +577,23 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
                             We explore the use of methods from model theory in the verification of array programs. Given a program P and an assertion A to check of P, we formulate these respectively as sentences φ<sub>P</sub> and φ<sub>A</sub> of multi-sorted first order logic. The sentence φ<sub>P</sub> is such that modulo a small set φ<sub>{ax}</sub> of axioms, the models of φ<sub>P</sub> are in 1-1 correspondence with  (suitably abstract representations of) the executions of P on arbitrary input arrays. Likewise, the models of φ<sub>A</sub> restricted to the class of models of φ<sub>P</sub> \wedge φ<sub>ax</sub>, correspond to (suitably abstracted) executions of P that satisfy the assertion A.
                             <br /> <br />
                             Our approach to verifying the program P against the assertion A consists of showing that the sentence α<sub>P, A</sub> := φ<sub>ax</sub> ∧ φ<sub>P</sub> ∧ ¬φ<sub>A</sub> has the <it>small model property</it>. That is, if α<sub>P, A</sub> has a model of some finite size, then there is also such a model in which the domains interpreting the sorts have all sizes bounded by a small function of P and A. The desired verification reduces to searching for models of α<sub>P, A</sub> of sizes within the mentioned bound. We examine specific classes of programs and assertions, and establish the small model property for α<sub>P, A</sub> by showing that models of α<sub>P, A</sub> that are large admit local reductions that are effected by "removal of iterations" in the executions of P that they correspond to.
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <b>First order Skolem function synthesis over finite structures</b>
+                <a data-bs-toggle="collapse" href="#rhpl" aria-expanded="false" aria-controls="collapseExample">[abstract]</a>
+                <!--<a href="Papers/fmu23-talk.pdf">[slides]</a>-->
+                <br />
+                <p style="margin-bottom:0.2cm;">Presented at the <a href="https://fmindia.cmi.ac.in/update2023/">Formal Methods Update Meet (FMU) 2023</a>, June-July, 2023</p>
+                <div class="collapse" id="rhpl">
+                    <div class="card card-body">
+                        <div class="card-text">
+                            The problem of Skolem function synthesis (SFS) asks if there is an algorithm that, given a prenex first order (FO) formula φ and a structure A, synthesizes the interpretations in A of the Skolem functions for the existential variables of φ, assuming that computable such interpretations exist. Here synthesis means constructing algorithms that compute the said interpretations. This problem has been studied extensively in the Boolean setting but a commensurate study for FO is lacking in the literature. A <a href="">recent paper<a/> of Akshay and Chakraborty (MFCS '22) provides a (possibly the first) systemmatic study of SFS for FO showing amongst other results that SFS in general has a negative answer, and that if the structure is fixed, then SFS has a positive answer precisely when the elementary diagram of the structure is decidable.
+                            <br/><br/>
+                            The characterization above immediately implies that SFS is in the affirmative for all finite structures. In fact it can be shown that there is an algorithm that for any given finite structure A of size n, synthesises the interpretations in A of the Skolem functions for any given prenex FO formula φ, in time n<sup>O(|φ|)</sup>. However with φ and A both seen as part of the input, this running time is exponential. This motivates asking: under what conditions can we get polynomial time algorithms for SFS? This talk explores the stated question and proposes that a finitary adaptation of a classical model-theoretic notion called the Löwenheim–Skolem property might offer some answers.
                         </div>
                     </div>
                 </div>

@@ -32,7 +32,9 @@
         #00cc99; -- indigo
         #513d8a; -- violet
         #ddd8eb; -- light gray
-        #ede4e4; -- pinkish gray -->
+        #ede4e4; -- pinkish gray
+        #e3f2fd; -- light cyan
+        -->
       }
       .p1 {
         font-family: Pangram, Garamond, Georgia, "Times New Roman";
@@ -56,10 +58,11 @@
       }
       .nav {
         margin-bottom: 150px;
+        margin: 0 auto;
       }
       .navbar {
         margin: 0 auto;
-        width: 60%;
+        width: 70%;
       }
       #main{
         margin: 0 auto;
@@ -77,25 +80,28 @@
       sub {
         bottom: -0.25em;
       }
+      .color-me {
+        color: #0b3f66;
+      }
     </style>
   </head>
   <body>
     <div id="main">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar fixed-top navbar-expand-lg py-1 navbar-dark" style="background-color: #0b3f66;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#research-interests">Research Interests</a>
-            <a class="nav-item nav-link" href="#publications">Publications</a>
-            <a class="nav-item nav-link" href="#other-articles">Other articles</a>
-            <a class="nav-item nav-link" href="#activities">Professional Activities</a>
-            <a class="nav-item nav-link" href="#teaching">Teaching</a>
-            <a class="nav-item nav-link" href="#some-talks-notes">Some talks and reports</a>
-          </div>
+          <ul class="navbar-nav justify-content-center text-align: center;">
+              <li class="nav-item justify-content-center"><a class="nav-link justify-content-center" href="#research-interests">    Research Interests</a></li>
+              <li class="nav-item justify-content-center mx-auto"><a class="nav-link justify-content-center" href="#publications">Publications</a></li>
+              <li class="nav-item"><a class="nav-link" href="#other-articles">Other articles</a></li>
+              <li class="nav-item"><a class="nav-item nav-link" href="#activities">Professional Activities</a></li>
+              <li class="nav-item"><a class="nav-item nav-link" href="#teaching">Teaching</a></li>
+              <li class="nav-item"><a class="nav-item nav-link" href="#some-talks-notes">Some talks and reports</a></li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -116,7 +122,7 @@
                   Before Cambridge, I was a post-doctoral fellow in the <a href="https://www.imsc.res.in/theoretical_computer_science">Theoretical Computer Science Wing</a> at the <a href="https://www.imsc.res.in/">Institute of Mathematical Sciences, Chennai</a> working with <a href="https://azimpremjiuniversity.edu.in/people/ramanujam-r">R. Ramanujam</a>.
                   I completed my Ph.D., and also my Bachelors and Masters, from the <a href="https://www.cse.iitb.ac.in">Department of Computer Science and Engineering</a> at <a href="https://www.iitb.ac.in">IIT Bombay</a>. My dissertation, titled "<a href="https://arxiv.org/abs/1609.06297">A generalization of the Łoś-Tarski preservation theorem</a>", was completed under the guidance of <a href=https://www.researchgate.net/profile/Bharat_Adsul>Bharat Adsul</a> and <a href=https://www.cse.iitb.ac.in/~supratik/>Supratik Chakraborty</a>. A summary of my dissertation can be found <a href="https://arxiv.org/abs/1811.01014">here</a>.
               </p>
-          </div></div>
+          </div>
         <hr />
        <div class="row" id="research-interests">
          <h3> Research Interests</h3>
@@ -528,6 +534,7 @@ Foundations of Computer Science (MFCS), Budapest, Hungary
                  </div>
             </li>
 
+                
             </ul>
                 </p>
 

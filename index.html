@@ -23,66 +23,75 @@
 
     <title>Abhisekh Sankaran</title>
     <style type="text/css">
-      .card{
-        color: white;
-        background-color: #ddd8eb;
-        <!-- #006666; -- darker indigo
-        #009999; -- less dark indigo
-        #669999; -- bluish gray
-        #00cc99; -- indigo
-        #513d8a; -- violet
-        #ddd8eb; -- light gray
-        #ede4e4; -- pinkish gray
-        #e3f2fd; -- light cyan
-        -->
-      }
-      .p1 {
-        font-family: Pangram, Garamond, Georgia, "Times New Roman";
-        font-size: large;
+        .card {         
+            color: white;
+            background-color: #ddd8eb;
+            <!-- #006666; -- darker indigo
+            #009999; -- less dark indigo
+            #669999; -- bluish gray
+            #00cc99; -- indigo
+            #513d8a; -- violet
+            #ddd8eb; -- light gray
+            #ede4e4; -- pinkish gray
+            #e3f2fd; -- light cyan
+            -->
         }
-      .p2 {
-        font-family: Garamond, Georgia, "Times New Roman";
+        .p1 {
+            font-family: Pangram, Garamond, Georgia, "Times New Roman";
+            font-size: large;
+            }
+        .p2 {
+            font-family: Garamond, Georgia, "Times New Roman";
+            }
+        .p3 {
+            font-family: Garamond, Georgia, "Times New Roman";
+            }
+        .container-fluid {
+            margin: 0 auto;
+            width: 95%;
         }
-      .p3 {
-        font-family: Garamond, Georgia, "Times New Roman";
+        html {
+            scroll-behavior: smooth;
         }
-      .container-fluid {
-        margin: 0 auto;
-        width: 95%;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      .row {
-        margin-top: 10px;
-      }
-      .nav {
-        margin-bottom: 150px;
-        margin: 0 auto;
-      }
-      .navbar {
-        margin: 0 auto;
-        width: 70%;
-      }
-      #main{
-        margin: 0 auto;
-        width: 60%;
-      }
-      sub, sup {
-        font-size: 75%;
-        line-height: 0;
-        position: relative;
-        vertical-align: baseline;
-      }
-      sup {
-        top: -0.5em;
-      }
-      sub {
-        bottom: -0.25em;
-      }
-      .color-me {
-        color: #0b3f66;
-      }
+        .row {
+            margin-top: 10px;
+        }
+        /* .nav {
+            margin-bottom: 150px;
+            margin: 0 auto;
+        } */
+        body {
+            padding-top: 80px; /* This prevents your page content from going UNDER the navbar */
+        }
+        .navbar {
+            width: 70%;
+            left: 15%; /* This centers it (100% - 70% = 30%. Half of 30 is 15%) */
+            margin-top: 10px; /* Optional: adds a little space above the bar so it "floats" */
+            border-radius: 10px; /* Optional: makes the corners look nice since it's not full-width */
+        }
+        #navbarNavAltMarkup .nav-link {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+        #main{
+            margin: 0 auto;
+            width: 60%;
+        }
+        sub, sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+        sup {
+            top: -0.5em;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        .color-me {
+            color: #0b3f66;
+        }
     </style>
   </head>
   <body>

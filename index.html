@@ -61,7 +61,7 @@
             margin: 0 auto;
         } */
         body {
-            padding-top: 100px; /* This prevents your page content from going UNDER the navbar */
+            padding-top: 110px; /* This prevents your page content from going UNDER the navbar */
         }
         .navbar {
             width: 70%;
@@ -69,6 +69,24 @@
             margin-top: 0px; /* Optional: adds a little space above the bar so it "floats" */
             border-radius: 10px; /* Optional: makes the corners look nice since it's not full-width */
             /* border-bottom: 2px solid rgba(0,0,0,0.1); */
+        }
+        .navbar::after {
+            content: "";
+            display: block;
+            position: absolute;
+            /* This places it exactly at the bottom of the navbar */
+            top: 100%; 
+            left: 0;
+            width: 100%;
+            
+            /* Adjust this height to determine how far below the navbar the text vanishes */
+            height: 40px; 
+            
+            /* Match this to your page's background color so it looks like the text is disappearing into the 'void' */
+            background-color: white; 
+            
+            /* Optional: Add a real border here if you want a visible 'cutoff line' */
+            border-bottom: 1px solid #ccc;
         }
         #navbarNavAltMarkup .nav-link {
             padding-left: 10px !important;

@@ -88,6 +88,24 @@
             /* Optional: Add a real border here if you want a visible 'cutoff line' */
             border-bottom: 1px solid #ccc;
         }
+        .navbar::before {
+            content: "";
+            display: block;
+            position: absolute;
+            /* This places it exactly at the bottom of the navbar */
+            top: 100%; 
+            left: 0;
+            width: 100%;
+            
+            /* Adjust this height to determine how far below the navbar the text vanishes */
+            height: 40px; 
+            
+            /* Match this to your page's background color so it looks like the text is disappearing into the 'void' */
+            background-color: white; 
+            
+            /* Optional: Add a real border here if you want a visible 'cutoff line' */
+            border-bottom: 1px solid #ccc;
+        }
         #navbarNavAltMarkup .nav-link {
             padding-left: 10px !important;
             padding-right: 10px !important;

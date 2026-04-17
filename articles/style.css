@@ -1,0 +1,88 @@
+/* Academic Style for Pandoc HTML */
+body {
+    font-family: "Latin Modern Roman", "Computer Modern Custom", "Times New Roman", serif;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #333;
+    background-color: #fdfdfd;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+h1, h2, h3 {
+    color: #1a1a1a;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* MathJax Specific Tweaks */
+.mjx-chtml {
+    font-size: 110% !important;
+}
+
+
+/* style.css */
+.theorem, .lemma, .claim, .corollary, .proposition, .definition, .remark {
+  border-left: 4px solid #4a90d9;
+  background: #f0f6ff;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.theorem > p:first-child { display: inline; margin: 0; }
+.theorem > div { display: inline; }
+.theorem > div > p { display: inline; margin: 0; }
+.claim > p:first-child { display: inline; margin: 0; }
+.claim > div { display: inline; }
+.claim > div > p { display: inline; margin: 0; }
+
+
+.proof {
+  /* border-left: 4px solid #aaa; */
+  background: #fafafa;
+  /* padding: 0.75em 1em; */
+  /* margin: 1em 0; */
+  border-radius: 0 6px 6px 0;
+}
+
+.proof p:last-child::after {
+    content: "\25FB"; /* Unicode for an empty square (white square) */
+    float: right;     /* Standard LaTeX position: right-aligned */
+    margin-left: 10px;
+    font-style: normal;
+    color: #1a1a1a;
+}
+
+/* Clearfix for the float:right to prevent layout issues */
+.proof::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* .proof::after {
+  content: "□";
+  display: block;
+  text-align: right;
+  margin-top: 0.5em;
+}
+
+/* QED symbol at end of proof */
+.proof > div:last-child > p:last-child::after {
+  content: " □";
+  float: right;
+} */
+
+/* Anchor offset so cross-reference links land above the box */
+span[id] {
+  display: block;
+  position: relative;
+  top: -1em;
+  visibility: hidden;
+}

@@ -35,19 +35,6 @@
 </header>
 <p><span class="math display">\[
 \newcommand{\mc}[1]{\mathcal{#1}}
-\newcommand{\ramseyth}{https://en.wikipedia.org/wiki/Ramsey%27s_theorem}
-\newcommand{\ramsey}{https://google.com}
-\newcommand{\pigeon}{https://google.com}
-\newcommand{\fol}{}
-\newcommand{\godel}{}
-\newcommand{\graph}{}
-\newcommand{\ramseypaper}{}
-\newcommand{\compactness}{}
-\newcommand{\modelth}{}
-\newcommand{\completeness}{}
-\newcommand{\los}{}
-\newcommand{\ultraproduct}{}
-\newcommand{\toread}{https://web.iitd.ac.in/~atripath/publications/Ramsey_TAS.pdf}
 \]</span></p>
 <p><a href="https://en.wikipedia.org/wiki/Ramsey%27s_theorem">Ramsey’s
 theorem</a> is a famous theorem from combinatorics that was proven by
@@ -70,7 +57,7 @@ c\)</span> form a clique of size 3, while vertices <span
 class="math inline">\(a, d, e, f\)</span> form an independent set of
 size 4.</p>
 <div style="text-align: center;">
-<img src="graph.svg" width="50%">
+<img src="images/graph.svg" width="50%">
 <p>
 Graph containing a clique of size 3 and an independent set of size 4
 </p>
@@ -156,7 +143,7 @@ then <span class="math inline">\(a_j\)</span> is non-adjacent to all
 class="math inline">\(k &gt; j\)</span>. Since <span
 class="math inline">\(\iota\)</span> is an infinite binary sequence,
 there exists by the <a
-href="https://en.wikipedia.org/wiki/Pigeonhole_principle">pigenhole
+href="https://en.wikipedia.org/wiki/Pigeonhole_principle">pigeonhole
 principle</a>, an infinite subsequence <span
 class="math inline">\(\gamma = (i_{j_1}, i_{j_2}, \ldots)\)</span> of
 <span class="math inline">\(\iota\)</span> for <span
@@ -181,29 +168,32 @@ vertices <span class="math inline">\(x\)</span> and for all vertices
 <span class="math inline">\(y\)</span>, there is an edge between <span
 class="math inline">\(x\)</span> and <span
 class="math inline">\(y\)</span>”. In the language of FO, this property
-can be expressed as <span class="math display">\[\forall x \forall y
-E(x, y)\]</span>where <span class="math inline">\(\forall\)</span> is a
-<a
+can be expressed as a sentence <span
+class="math inline">\(\varphi_1\)</span> given by <span
+class="math display">\[\varphi_1 := \forall x \forall y \,\big(\, x = y
+~\vee~ E(x, y) \big)\]</span>where <span
+class="math inline">\(\forall\)</span> is a <a
 href="https://en.wikipedia.org/wiki/Quantifier_(logic)">quantifier</a>
 that stands for “for all” (indeed <span
 class="math inline">\(\forall\)</span> is an inverted A) and <span
 class="math inline">\(E\)</span> is a binary relation symbol denoting
 the edge relation. Likewise, the property that a graph contains a
 triangle is expressed by the sentence <span
-class="math display">\[\exists x \exists y \exists z\, \big(\neg (x = y)
-\wedge \neg (y = z) \wedge \neg (x = z) \wedge E(x, y) \wedge E(y, z)
-\wedge E(z, x) \big)\]</span>where <span
+class="math inline">\(\varphi_2\)</span> given by <span
+class="math display">\[\varphi_2 := \exists x \exists y \exists z\,
+\big(\neg (x = y) \wedge \neg (y = z) \wedge \neg (x = z) \wedge E(x, y)
+\wedge E(y, z) \wedge E(z, x) \big)\]</span>where <span
 class="math inline">\(\exists\)</span> is a quantifier denoting “there
 exists” (indeed <span class="math inline">\(\exists\)</span> is a
 flipped E), <span class="math inline">\(\neg\)</span> denotes “it is not
 the case that” and <span class="math inline">\(\wedge\)</span> denotes
 “and”. The sentence thus talks about the existence of three distinct
 vertices <span class="math inline">\(x, y\)</span> and <span
-class="math inline">\(z\)</span> that are pair-wise adjacent. Without
-going into the formal technical definition of FO, it just suffices for
-us here to understand that FO is the collection of all sentences like
-the ones above, that are built up from simple expressions of the form
-<span class="math inline">\(E(x, y)\)</span> and <span
+class="math inline">\(z\)</span> that are pair-wise adjacent.</p>
+<p>Without going into the formal technical definition of FO, it just
+suffices for us here to understand that FO is the collection of all
+sentences like the ones above, that are built up from simple expressions
+of the form <span class="math inline">\(E(x, y)\)</span> and <span
 class="math inline">\(x = y\)</span> inductively using the Boolean
 connectives <span class="math inline">\(\wedge\)</span> and <span
 class="math inline">\(\neg\)</span> and the quantifiers <span
@@ -217,6 +207,16 @@ above expressing the clique property is true in the graph <span
 class="math inline">\(G_1\)</span> below, while sentence <span
 class="math inline">\(\varphi_2\)</span> that asserts the existence of a
 triangle is false in <span class="math inline">\(G_2\)</span>.</p>
+<div style="display: flex; justify-content: center; gap: 6em;">
+  <div style="text-align: center; width: 37%">
+    <img src="images/clique.svg" width="100%">
+    <p>G<sub>1</sub></p>
+  </div>
+  <div style="text-align: center; width: 37%">
+    <img src="images/triangle-free.svg" width="100%">
+    <p>G<sub>2</sub></p>
+  </div>
+</div>
 <p>In this case, we say <span class="math inline">\(G_1\)</span> is a
 <em>model</em> of <span class="math inline">\(\varphi_1\)</span>, or
 simply <em><span class="math inline">\(G_1\)</span> models <span

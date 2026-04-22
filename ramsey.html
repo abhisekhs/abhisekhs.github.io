@@ -4,158 +4,11 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Abhisekh Sankaran" />
-  <meta name="dcterms.date" content="2020-03-03" />
   <title>Ramsey’s Theorem</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -171,6 +24,7 @@
       vertical-align: middle;
     }
   </style>
+  <link rel="stylesheet" href="style.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
@@ -178,55 +32,77 @@
 <body>
 <header id="title-block-header">
 <h1 class="title">Ramsey’s Theorem</h1>
-<p class="author">Abhisekh Sankaran</p>
-<p class="date">March 3, 2020</p>
 </header>
-<p><a href="https://google.com">Ramsey’s theorem</a> is a famous theorem
-from combinatorics that was proven by the British mathematician <a
-href="https://google.com">Frank Ramsey</a> in 1930. It gives one
-instance of inevitable order arising in a system when the system scales.
-The theorem launched a whole area of combinatorics called <em>Ramsey
-theory</em> which is largely a collection of results in the same spirit
+<p><span class="math display">\[
+\newcommand{\mc}[1]{\mathcal{#1}}
+\]</span></p>
+<p><a href="https://en.wikipedia.org/wiki/Ramsey%27s_theorem">Ramsey’s
+theorem</a> is a famous theorem from combinatorics that was proven by
+the British mathematician <a
+href="https://en.wikipedia.org/wiki/Frank_P._Ramsey">Frank Ramsey</a> in
+1930. It gives one instance of inevitable order arising in a system when
+the system scales. The theorem launched a whole area of combinatorics
+called <a href="https://en.wikipedia.org/wiki/Ramsey_theory">Ramsey
+Theory</a> which is largely a collection of results in the same spirit
 as Ramsey’s.</p>
-<h1 id="statement-of-the-theorem">Statement of the theorem</h1>
-<p>A clique, resp. independent set, in a <a href="">graph</a> is set of
-vertices of the graph such that every pair of (distinct) vertices is
-adjacent, resp. non-adjacent in the graph. For instance in the graph
-below, vertices <span class="math inline">\(a, c, d\)</span> form a
-clique of size 3 while vertices <span class="math inline">\(a,
-b, e, f\)</span> form an independent set of size 4.</p>
-<p>In his now classic paper <a href="">“On a problem of formal
-logic”</a>, Ramsey proved a remarkable result: that every large enough
-graph always contains either a clique or an independent set of a given
-size.</p>
-<div id="theorem:1" class="theorem">
-<p><strong>Theorem 1</strong> (Ramsey, 1930). <em>There exists a
-function <span class="math inline">\(R: \mathbb{N} \rightarrow
+<h1 id="statement-of-the-theorem">Statement of the Theorem</h1>
+<p>A <a
+href="https://en.wikipedia.org/wiki/Clique_(graph_theory)">clique</a>,
+respectively <a
+href="https://en.wikipedia.org/wiki/Independent_set_(graph_theory)">independent
+set</a>, in a graph is set of vertices of the graph such that every pair
+of (distinct) vertices is adjacent, resp. non-adjacent in the graph. For
+instance in the graph below, vertices <span class="math inline">\(a, b,
+c\)</span> form a clique of size 3, while vertices <span
+class="math inline">\(a, d, e, f\)</span> form an independent set of
+size 4.</p>
+<div style="text-align: center;">
+<img src="images/graph.svg" width="50%">
+<p>
+Graph containing a clique of size 3 and an independent set of size 4
+</p>
+</div>
+<p>In his now classic paper <a
+href="https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s2-30.1.264">On
+a problem of formal logic</a>, Ramsey proved a remarkable result: that
+every large enough graph always contains either a clique or an
+independent set of a given size.</p>
+<div id="thm:ramsey-fin"
+style="position:relative; top:-1em; height:0; visibility:hidden;">
+
+</div>
+<div class="theorem">
+<p><strong>Theorem 1</strong> (Ramsey, 1930). There exists a function
+<span class="math inline">\(R: \mathbb{N} \rightarrow
 \mathbb{N}\)</span> such that for every natural number <span
 class="math inline">\(n\)</span>, every graph of size <span
 class="math inline">\(\ge R(n)\)</span> contains either a clique or an
-independent set of size <span class="math inline">\(n\)</span>.</em></p>
+independent set of size <span class="math inline">\(n\)</span>.</p>
 </div>
-<p>There are combinatorial proofs of this theorem that further give good
-upper bounds on <span class="math inline">\(R(n)\)</span>. We shall
-however look at a proof that just proves the existence of the function
-<span class="math inline">\(R\)</span>, but that is based on an elegant
-infinitary argument using mathematical logic. But before that, let us
-first look at an infinitary version of Ramsey’s theorem.</p>
+<p>There are <a
+href="https://en.wikipedia.org/wiki/Ramsey%27s_theorem#Proof">combinatorial
+proofs</a> of this theorem that further give good upper bounds on <span
+class="math inline">\(R(n)\)</span>. We shall however look at a proof
+that just proves the existence of the function <span
+class="math inline">\(R\)</span>, but that is based on an elegant
+infinitary argument using mathematical logic. Towards this, let us first
+look at an infinitary version of Ramsey’s theorem.</p>
 <h1 id="the-infinitary-ramsey-theorem">The Infinitary Ramsey
-theorem</h1>
-<p>The theorem is as stated below. In the light of this result,
-Theorem <a href="#theorem:1" data-reference-type="ref"
-data-reference="theorem:1">1</a> can be regarded as a finitary Ramsey
-theorem.</p>
-<div id="theorem:2" class="theorem">
-<p><strong>Theorem 2</strong> (Ramsey, 1930). <em>Every infinite graph
-contains either an infinite clique or an infinite independent
-set.</em></p>
+Theorem</h1>
+<p>The theorem is as stated below. In the light of this result, <a
+href="#thm:ramsey-fin">Theorem 1</a> can be regarded as a “finitary”
+Ramsey theorem.</p>
+<div id="thm:ramsey-inf"
+style="position:relative; top:-1em; height:0; visibility:hidden;">
+
+</div>
+<div class="theorem">
+<p><strong>Theorem 2</strong> (Ramsey, 1930). Every infinite graph
+contains either an infinite clique or an infinite independent set.</p>
 </div>
 <div class="proof">
-<p><em>Proof.</em> Let <span class="math inline">\(G\)</span> be an
-infinite graph. Consider an arbitrary vertex <span
+<p><strong>Proof</strong>. Let <span class="math inline">\(G\)</span> be
+an infinite graph. Consider an arbitrary vertex <span
 class="math inline">\(a_1\)</span> of <span
 class="math inline">\(G\)</span>. Let <span class="math inline">\(S_{1,
 0}\)</span> be the set of all vertices of <span
@@ -254,38 +130,37 @@ argument as above, we have for some <span class="math inline">\(i_2 \in
 \{0,1\}\)</span>, that <span class="math inline">\(S_{2, i_2}\)</span>
 is infinite.</p>
 <p>Continuing this way, we get an infinite sequence <span
-class="math inline">\(\alpha = (a_1,
-  a_2, \ldots)\)</span> of vertices of <span
-class="math inline">\(G\)</span> and an infinite binary sequence <span
-class="math inline">\(\iota = (i_1, i_2, \ldots)\)</span> such that for
-<span class="math inline">\(j \ge 1\)</span>, if <span
+class="math inline">\(\alpha = (a_1, a_2, \ldots)\)</span> of vertices
+of <span class="math inline">\(G\)</span> and an infinite binary
+sequence <span class="math inline">\(\iota = (i_1, i_2, \ldots)\)</span>
+such that for <span class="math inline">\(j \ge 1\)</span>, if <span
 class="math inline">\(i_j = 1\)</span>, then the vertex <span
 class="math inline">\(a_j\)</span> is adjacent to all <span
 class="math inline">\(a_k\)</span> for <span class="math inline">\(k
 &gt; j\)</span>, and if <span class="math inline">\(i_j = 0\)</span>,
 then <span class="math inline">\(a_j\)</span> is non-adjacent to all
 <span class="math inline">\(a_k\)</span> for <span
-class="math inline">\(k &gt;
-  j\)</span>. Since <span class="math inline">\(\iota\)</span> is an
-infinite binary sequence, there exists by the <a
-href="https://google.com">pigenhole principle</a>, an infinite
-subsequence <span class="math inline">\(\gamma = (i_{j_1}, i_{j_2},
-\ldots)\)</span> of <span class="math inline">\(\iota\)</span> for <span
-class="math inline">\(j_1 &lt; j_2 &lt;
-  \ldots\)</span>, that either consists only of 0s or consists only of
-1s. It then follows that the subsequence <span
-class="math inline">\((a_{j_1}, a_{j_2}, \ldots)\)</span> of <span
-class="math inline">\(\alpha\)</span> is such that either all vertices
-in the sequence are adjacent to each other, or all vertices in the
-sequence are non-adjacent to each other. In other words, <span
-class="math inline">\(G\)</span> either contains an infinite clique or
-an infinite independent set. ◻</p>
+class="math inline">\(k &gt; j\)</span>. Since <span
+class="math inline">\(\iota\)</span> is an infinite binary sequence,
+there exists by the <a
+href="https://en.wikipedia.org/wiki/Pigeonhole_principle">pigeonhole
+principle</a>, an infinite subsequence <span
+class="math inline">\(\gamma = (i_{j_1}, i_{j_2}, \ldots)\)</span> of
+<span class="math inline">\(\iota\)</span> for <span
+class="math inline">\(j_1 &lt; j_2 &lt; \ldots\)</span>, that either
+consists only of 0s or consists only of 1s. It then follows that the
+subsequence <span class="math inline">\((a_{j_1}, a_{j_2},
+\ldots)\)</span> of <span class="math inline">\(\alpha\)</span> is such
+that either all vertices in the sequence are adjacent to each other, or
+all vertices in the sequence are non-adjacent to each other. In other
+words, <span class="math inline">\(G\)</span> either contains an
+infinite clique or an infinite independent set.</p>
 </div>
-<h1 id="some-background-from-mathematical-logic">Some background from
-mathematical logic</h1>
+<h1 id="background-from-mathematical-logic">Background from Mathematical
+Logic</h1>
 <p>We will need a bit of background from mathematical logic for the
-proof of Theorem <a href="#theorem:1" data-reference-type="ref"
-data-reference="theorem:1">1</a>. The language of <a href="">first order
+proof of <a href="#thm:ramsey-fin">Theorem 1</a>. The language of <a
+href="https://en.wikipedia.org/wiki/First-order_logic">first order
 logic</a>, abbreviated FO, is a formal language in which interesting
 properties of various kinds of mathematical structures can be expressed.
 For instance, to say that a graph is a clique is to express “For all
@@ -293,32 +168,35 @@ vertices <span class="math inline">\(x\)</span> and for all vertices
 <span class="math inline">\(y\)</span>, there is an edge between <span
 class="math inline">\(x\)</span> and <span
 class="math inline">\(y\)</span>”. In the language of FO, this property
-can be expressed as “<span style="color: purple"><span
-class="math inline">\(\forall x \forall y E(x, y)\)</span></span>”,
-where <span class="math inline">\(\forall\)</span> stands for “for all”
-(indeed <span class="math inline">\(\forall\)</span> is an inverted
-<span class="math inline">\(A\)</span>) and <span
+can be expressed as a sentence <span
+class="math inline">\(\varphi_1\)</span> given by <span
+class="math display">\[\varphi_1 := \forall x \forall y \,\big(\, x = y
+~\vee~ E(x, y) \big)\]</span>where <span
+class="math inline">\(\forall\)</span> is a <a
+href="https://en.wikipedia.org/wiki/Quantifier_(logic)">quantifier</a>
+that stands for “for all” (indeed <span
+class="math inline">\(\forall\)</span> is an inverted A) and <span
 class="math inline">\(E\)</span> is a binary relation symbol denoting
 the edge relation. Likewise, the property that a graph contains a
-triangle is expressed by the sentence “<span style="color: violet"><span
-class="math inline">\(\exists x \exists y \exists z \big(\neg (x = y)
-  \wedge \neg (y = z) \wedge \neg (x = z) \wedge E(x, y) \wedge E(y,
-  z) \wedge E(z, x) \big)\)</span></span>” where <span
-class="math inline">\(\exists\)</span> denotes “there exists” (indeed
-<span class="math inline">\(\exists\)</span> is a flipped <span
-class="math inline">\(E\)</span>), <span
-class="math inline">\(\neg\)</span> denotes “it is not the case that”
-and <span class="math inline">\(\wedge\)</span> denotes “and”. The
-sentence thus talks about the existence of three distinct vertices <span
-class="math inline">\(x, y\)</span> and <span
-class="math inline">\(z\)</span> that are pair-wise adjacent. Without
-going into the formal technical definition of FO, it just suffices for
-us here to understand that FO is the collection of all sentences like
-the ones above, that are built up from simple expressions of the form
-<span class="math inline">\(E(x, y)\)</span> and <span
-class="math inline">\(x = y\)</span> inductively using the <em>Boolean
-connectives</em> <span class="math inline">\(\wedge\)</span> and <span
-class="math inline">\(\neg\)</span> and the <em>quantifiers</em> <span
+triangle is expressed by the sentence <span
+class="math inline">\(\varphi_2\)</span> given by <span
+class="math display">\[\varphi_2 := \exists x \exists y \exists z\,
+\big(\neg (x = y) \wedge \neg (y = z) \wedge \neg (x = z) \wedge E(x, y)
+\wedge E(y, z) \wedge E(z, x) \big)\]</span>where <span
+class="math inline">\(\exists\)</span> is a quantifier denoting “there
+exists” (indeed <span class="math inline">\(\exists\)</span> is a
+flipped E), <span class="math inline">\(\neg\)</span> denotes “it is not
+the case that” and <span class="math inline">\(\wedge\)</span> denotes
+“and”. The sentence thus talks about the existence of three distinct
+vertices <span class="math inline">\(x, y\)</span> and <span
+class="math inline">\(z\)</span> that are pair-wise adjacent.</p>
+<p>Without going into the formal technical definition of FO, it just
+suffices for us here to understand that FO is the collection of all
+sentences like the ones above, that are built up from simple expressions
+of the form <span class="math inline">\(E(x, y)\)</span> and <span
+class="math inline">\(x = y\)</span> inductively using the Boolean
+connectives <span class="math inline">\(\wedge\)</span> and <span
+class="math inline">\(\neg\)</span> and the quantifiers <span
 class="math inline">\(\exists\)</span> and <span
 class="math inline">\(\forall\)</span>.</p>
 <p>The above describes the syntax of FO. We now delve briefly into the
@@ -326,9 +204,19 @@ class="math inline">\(\forall\)</span>.</p>
 one can talk about whether the sentence is true in the graph or not. For
 instance, the sentence <span class="math inline">\(\varphi_1\)</span>
 above expressing the clique property is true in the graph <span
-class="math inline">\(G_1\)</span> below, while the sentence <span
-class="math inline">\(\varphi_2\)</span> asserting the existence of a
+class="math inline">\(G_1\)</span> below, while sentence <span
+class="math inline">\(\varphi_2\)</span> that asserts the existence of a
 triangle is false in <span class="math inline">\(G_2\)</span>.</p>
+<div style="display: flex; justify-content: center; gap: 6em;">
+  <div style="text-align: center; width: 37%">
+    <img src="images/clique.svg" width="100%">
+    <p>G<sub>1</sub></p>
+  </div>
+  <div style="text-align: center; width: 37%">
+    <img src="images/triangle-free.svg" width="100%">
+    <p>G<sub>2</sub></p>
+  </div>
+</div>
 <p>In this case, we say <span class="math inline">\(G_1\)</span> is a
 <em>model</em> of <span class="math inline">\(\varphi_1\)</span>, or
 simply <em><span class="math inline">\(G_1\)</span> models <span
@@ -345,154 +233,128 @@ class="math inline">\(G\)</span> models <span
 class="math inline">\(\varphi\)</span> or it does not.</p>
 <p>The heart of the proof of Ramsey’s theorem that we will see in the
 next section, uses a very important result concerning FO, that was
-proven by the celebrated logician <a href="">Kurt Gödel</a> in 1930
-(interesting coincidence with Ramsey!). This result, called the <a
-href=""><em>Compactness theorem</em></a>, is one of the most central
-results in the subject of <a href="">model theory</a> that studies the
-relationship between the syntax and semantics of FO (and other logics as
-well). To state the result, we observe that the notion of a graph <span
-class="math inline">\(G\)</span> being a model or non-model of an FO
-sentence can be extended naturally to it being a model or non-model of a
-collection <span class="math inline">\(\ensuremath{\mathcal{S}}\)</span>
-of FO sentences – <span class="math inline">\(G\)</span> is a model of
-<span class="math inline">\(\ensuremath{\mathcal{S}}\)</span> precisely
-when it models every sentence of <span
-class="math inline">\(\ensuremath{\mathcal{S}}\)</span>. The theorem now
+proven by the celebrated logician <a
+href="https://en.wikipedia.org/wiki/Kurt_G%C3%B6del">Kurt Gödel</a> in
+1930 (interesting coincidence with Ramsey!). This result, called the <a
+href="https://en.wikipedia.org/wiki/Compactness_theorem">Compactness
+theorem</a>, is one of the most central results in the subject of <a
+href="https://en.wikipedia.org/wiki/Model_theory">model theory</a> that
+studies the relationship between the syntax and semantics of FO (and
+other logics as well). To state the result, we observe that the notion
+of a graph <span class="math inline">\(G\)</span> being a model or
+non-model of an FO sentence can be extended naturally to it being a
+model or non-model of a collection <span
+class="math inline">\(\mc{S}\)</span> of FO sentences – <span
+class="math inline">\(G\)</span> is a model of <span
+class="math inline">\(\mc{S}\)</span> precisely when it models every
+sentence of <span class="math inline">\(\mc{S}\)</span>. The theorem now
 states the following.</p>
-<div id="theorem:3" class="theorem">
-<p><strong>Theorem 3</strong> (Compactness theorem; Gödel, 1930).
-<em>Let <span class="math inline">\(\ensuremath{\mathcal{S}}\)</span> be
-a set of FO sentences. If every finite subset of <span
-class="math inline">\(\ensuremath{\mathcal{S}}\)</span> has a model,
-then <span class="math inline">\(\ensuremath{\mathcal{S}}\)</span> has a
-model.</em></p>
+<div id="thm:compactness"
+style="position:relative; top:-1em; height:0; visibility:hidden;">
+
+</div>
+<div class="theorem">
+<p><strong>Theorem 3</strong> (Compactness theorem; Gödel, 1930). Let
+<span class="math inline">\(\mc{S}\)</span> be a set of FO sentences. If
+every finite subset of <span class="math inline">\(\mc{S}\)</span> has a
+model, then <span class="math inline">\(\mc{S}\)</span> has a model.</p>
 </div>
 <p>The theorem thus enables us to reason about models of an infinite set
 of sentences simply by reasoning about models of finite subsets of it.
 The original proof of the theorem by Gödel was via his famous <a
-href=""><em>Completeness theorem</em></a> for FO, and showed the theorem
-in its “existential form” as stated above, i.e. the existence of models
-for the infinite set assuming the existence of models for its finite
-subsets. Later, <a href="">Jerzy Lós</a> gave an alternate constructive
-proof of this theorem that shows how to put together the models of the
-finite subsets via an <a href="">ultraproduct construction</a> to get a
-model of the infinite set. We however will be concerned only with the
-existential form for our purposes.</p>
-<h1 id="an-infinitary-proof-of-the-finitary-ramsey-theorem">An
-“infinitary” proof of (the finitary) Ramsey theorem</h1>
+href="https://en.wikipedia.org/wiki/G%C3%B6del%27s_completeness_theorem">Completeness
+theorem</a> for FO, and showed the theorem in its “existential form” as
+stated above, i.e. the existence of models for the infinite set assuming
+the existence of models for its finite subsets. Later, <a
+href="https://en.wikipedia.org/wiki/Jerzy_%C5%81o%C5%9B">Jerzy Lós</a>
+gave an alternate constructive proof of this theorem that showed how to
+put together the models of the finite subsets via an <a
+href="https://en.wikipedia.org/wiki/Ultraproduct">ultraproduct
+construction</a> to get a model of the infinite set. We however will be
+concerned only with the existential form for our purposes.</p>
+<h1 id="proving-ramseys-theorem-using-logic">Proving Ramsey’s Theorem
+using Logic</h1>
 <p>The Compactness theorem is typically used to prove results about
 infinite structures. We now see an application of it to prove a finitary
-result too, namely Theorem <a href="#theorem:1"
-data-reference-type="ref" data-reference="theorem:1">1</a>.</p>
+result too, namely <a href="#thm:ramsey-fin">Theorem 1</a>.</p>
 <div class="proof">
-<p><em>Proof.</em> <span>Proof of Theorem <a href="#theorem:1"
-data-reference-type="ref" data-reference="theorem:1">1</a></span> Let
-<span class="math inline">\(n\)</span> be a given natural number. Let
-<span class="math inline">\(\mathsf{Clique}_n\)</span> and <span
-class="math inline">\(\mathsf{Indept}_n\)</span> be FO sentences that
-respectively express that a graph contains a clique of size <span
+<p><strong>Proof</strong> (Proof of <a href="#thm:ramsey-fin">Theorem
+1</a>). Let <span class="math inline">\(n\)</span> be a given natural
+number. Let <span class="math inline">\(\mathsf{Clique}_n\)</span> and
+<span class="math inline">\(\mathsf{Indept}_n\)</span> be FO sentences
+that respectively express that a graph contains a clique of size <span
 class="math inline">\(n\)</span> and an independent set of size <span
 class="math inline">\(n\)</span>. So for instance, for <span
-class="math inline">\(n = 3\)</span>, we have the following:</p>
-<table>
-<tbody>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">\(\mathsf{Clique}_3\)</span></td>
-<td style="text-align: left;">:=</td>
-<td style="text-align: left;"><span
-class="math inline">\(\varphi_2\)</span> (as seen above)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">\(\mathsf{Indept}_3\)</span></td>
-<td style="text-align: left;">:=</td>
-<td style="text-align: left;"><span class="math inline">\(\exists x
-\exists y \exists z
-      \big(\neg (x = y) \wedge \neg (y = z) \wedge \neg (x = z) \wedge
-\neg
-      E(x, y) \wedge \neg E(y, z) \wedge \neg E(z, x)
-\big)\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Let now <span class="math inline">\(\lambda_j\)</span> be the
+class="math inline">\(n = 3\)</span>, we have the following: <span
+class="math display">\[
+\begin{align*}
+\mathsf{Clique}_3 &amp;:= \varphi_2 ~\text{(as seen above)}\\
+\mathsf{Indept}_3 &amp;:= \exists x \exists y \exists z \,\big(\neg (x =
+y) \wedge \neg (y = z) \wedge \neg (x = z) \wedge \neg E(x, y) \wedge
+\neg E(y, z) \wedge \neg E(z, x) \big)
+\end{align*}
+\]</span> Let now <span class="math inline">\(\lambda_j\)</span> be the
 sentence that expresses that a graph has at least <span
 class="math inline">\(j\)</span> vertices. So for instance, for <span
 class="math inline">\(j = 3\)</span>, we have <span
 class="math display">\[\lambda_3 := \exists x \exists y \exists z \big(
 \neg (x = y)
-  \wedge \neg (y = z) \wedge \neg (x = z) \big)\]</span> Consider now
-the set <span class="math inline">\(\ensuremath{\mathcal{S}}\)</span> of
-sentences given by</p>
-<p><span class="math display">\[\ensuremath{\mathcal{S}} := \{ \neg
-\mathsf{Clique}_n, \neg \mathsf{Indept}_n \}
-  \bigcup \{\lambda_j \mid j \ge 1\}\]</span></p>
-<p>Claim: The set <span
-class="math inline">\(\ensuremath{\mathcal{S}}\)</span> is
+\wedge \neg (y = z) \wedge \neg (x = z) \big)\]</span>Consider now the
+set <span class="math inline">\(\mc{S}\)</span> of sentences given by
+<span class="math display">\[\mc{S} := \{ \neg \mathsf{Clique}_n, \neg
+\mathsf{Indept}_n \}
+\,\bigcup\, \{\lambda_j \mid j \ge 1\}\]</span> <strong>Claim</strong>.
+The set <span class="math inline">\(\mc{S}\)</span> is
 unsatisfiable.</p>
 <p>Why? For if not, then suppose a graph <span
 class="math inline">\(G\)</span> models <span
-class="math inline">\(\ensuremath{\mathcal{S}}\)</span>. This graph must
-be infinite since it is a model of <span
-class="math inline">\(\lambda_j\)</span> for every <span
-class="math inline">\(j\)</span>. Now by the infinitary Ramsey theorem,
-namely Theorem <a href="#theorem:2" data-reference-type="ref"
-data-reference="theorem:2">2</a> above, <span
-class="math inline">\(G\)</span> must contain an infinite clique or an
-infinite independent set. Then it must have either a clique of size
-<span class="math inline">\(n\)</span> or an independent set of size
-<span class="math inline">\(n\)</span>. But this contradicts the
+class="math inline">\(\mc{S}\)</span>. This graph must be infinite since
+it is a model of <span class="math inline">\(\lambda_j\)</span> for
+every <span class="math inline">\(j\)</span>. Now by the infinitary
+Ramsey theorem, namely <a href="#thm:ramsey-inf">Theorem 2</a> above,
+<span class="math inline">\(G\)</span> must contain an infinite clique
+or an infinite independent set. Then it must have either a clique of
+size <span class="math inline">\(n\)</span> or an independent set of
+size <span class="math inline">\(n\)</span>. But this contradicts the
 assumption that <span class="math inline">\(G\)</span> models <span
 class="math inline">\(\neg \mathsf{Clique}_n\)</span> and <span
-class="math inline">\(\neg
-  \mathsf{Indept}_n\)</span>.</p>
-<p>So <span class="math inline">\(\ensuremath{\mathcal{S}}\)</span> is
-unsatisfiable. By the Compactness theorem, namely Theorem <a
-href="#theorem:3" data-reference-type="ref"
-data-reference="theorem:3">3</a>, in contrapositive form, there is a
-finite (and non-empty) subset <span
-class="math inline">\(\ensuremath{\mathcal{T}}\)</span> of <span
-class="math inline">\(\ensuremath{\mathcal{S}}\)</span> that is
-unsatisfiable. Then <span class="math inline">\(\ensuremath{\mathcal{T}}
-= \ensuremath{\mathcal{T}}_1 \cup \ensuremath{\mathcal{T}}_2\)</span>
-where <span class="math inline">\(\ensuremath{\mathcal{T}}_1\)</span> is
-a finite subset of <span class="math inline">\(\{\lambda_j \mid j \ge
-1\}\)</span> and <span
-class="math inline">\(\ensuremath{\mathcal{T}}_2\)</span> is a subset of
-<span class="math inline">\(\{\neg \mathsf{Clique}_n, \neg
-  \mathsf{Indept}_n\}\)</span>. Observe that <span
-class="math inline">\(\ensuremath{\mathcal{T}}_1\)</span> must be
-non-empty since if not then <span
-class="math inline">\(\ensuremath{\mathcal{T}}\)</span> is a subset of
-<span class="math inline">\(\{\neg \mathsf{Clique}_n,
-  \neg \mathsf{Indept}_n\}\)</span>. But the latter set is satisfiable;
-for instance, any graph containing less than <span
+class="math inline">\(\neg \mathsf{Indept}_n\)</span>.</p>
+<p>So <span class="math inline">\(\mc{S}\)</span> is unsatisfiable. By
+the Compactness theorem, namely <a
+href="#thm:compactness">Theorem 3</a>, in contrapositive form, there is
+a finite (and non-empty) subset <span
+class="math inline">\(\mc{T}\)</span> of <span
+class="math inline">\(\mc{S}\)</span> that is unsatisfiable. Then <span
+class="math inline">\(\mc{T} = \mc{T}_1 \cup \mc{T}_2\)</span> where
+<span class="math inline">\(\mc{T}_1\)</span> is a finite subset of
+<span class="math inline">\(\{\lambda_j \mid j \ge 1\}\)</span> and
+<span class="math inline">\(\mc{T}_2\)</span> is a subset of <span
+class="math inline">\(\{\neg \mathsf{Clique}_n, \neg
+\mathsf{Indept}_n\}\)</span>. Observe that <span
+class="math inline">\(\mc{T}_1\)</span> must be non-empty since if not,
+then <span class="math inline">\(\mc{T}\)</span> is a subset of <span
+class="math inline">\(\{\neg \mathsf{Clique}_n, \neg
+\mathsf{Indept}_n\}\)</span>. But the latter set is satisfiable; for
+instance, any graph containing less than <span
 class="math inline">\(n\)</span> vertices is a model for the set.</p>
-<p>So <span class="math inline">\(\ensuremath{\mathcal{T}}_1\)</span>
-must be non-empty and since <span
-class="math inline">\(\lambda_j\)</span> implies <span
+<p>So <span class="math inline">\(\mc{T}_1\)</span> must be non-empty
+and since <span class="math inline">\(\lambda_j\)</span> implies <span
 class="math inline">\(\lambda_k\)</span> whenever <span
 class="math inline">\(j \ge k\)</span>, we can, without loss of
-generality, assume <span
-class="math inline">\(\ensuremath{\mathcal{T}}_1\)</span> to be a
+generality, assume <span class="math inline">\(\mc{T}_1\)</span> to be a
 singleton, say <span class="math inline">\(\{\lambda_r\}\)</span>. Now
-since <span class="math inline">\(\ensuremath{\mathcal{T}}\)</span> is
-unsatisfiable, so is <span
-class="math inline">\(\ensuremath{\mathcal{T}}_1 \cup \{\neg
-  \mathsf{Clique}_n, \neg \mathsf{Indept}_n\}\)</span>. That is, <span
-class="math inline">\(\{\lambda_r,
-  \neg \mathsf{Clique}_n, \neg \mathsf{Indept}_n\}\)</span> is
-unsatisfiable. Then <span class="math inline">\(\lambda_r\)</span>
-implies <span class="math inline">\(\mathsf{Clique}_n \vee
-  \mathsf{Indept}_n\)</span>. In other words, any graph of size <span
-class="math inline">\(\ge r\)</span> contains a clique or an independent
-set of size <span class="math inline">\(n\)</span>. Taking <span
-class="math inline">\(R(n) =
-  r\)</span>, we find that Theorem <a href="#theorem:1"
-data-reference-type="ref" data-reference="theorem:1">1</a> is indeed
-true. ◻</p>
+since <span class="math inline">\(\mc{T}\)</span> is unsatisfiable, so
+is <span class="math inline">\(\mc{T}_1 \cup \{\neg \mathsf{Clique}_n,
+\neg \mathsf{Indept}_n\}\)</span>. That is, <span
+class="math inline">\(\{\lambda_r, \neg \mathsf{Clique}_n, \neg
+\mathsf{Indept}_n\}\)</span> is unsatisfiable. Then <span
+class="math inline">\(\lambda_r\)</span> implies <span
+class="math inline">\(\mathsf{Clique}_n \vee \mathsf{Indept}_n\)</span>.
+In other words, any graph of size <span class="math inline">\(\ge
+r\)</span> contains a clique or an independent set of size <span
+class="math inline">\(n\)</span>. Taking <span
+class="math inline">\(R(n) = r\)</span>, we find that <a
+href="#thm:ramsey-fin">Theorem 1</a> is indeed true. </p>
 </div>
-<h1 id="historical-notes">Historical notes</h1>
 </body>
 </html>
